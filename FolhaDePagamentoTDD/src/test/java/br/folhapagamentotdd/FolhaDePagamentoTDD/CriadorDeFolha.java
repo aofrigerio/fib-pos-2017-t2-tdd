@@ -7,7 +7,7 @@ public class CriadorDeFolha {
 	public CriadorDeFolha() {}; //construtor
 		
 	public CriadorDeFolha funcionario(String nome, double hora_trabalhada, double salario_hora, int dependentes) {
-		calculoFolha = new CalculoFolha();
+		CalculoFolha calculoFolha = new CalculoFolha();
 		calculoFolha.adicionaFolha(new Colaborador(nome, hora_trabalhada, salario_hora, dependentes));
 		return this;
 	}

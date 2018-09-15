@@ -35,30 +35,31 @@ public class CalculoFolhaTeste {
 	
 	@Test
 	public void VerificarSetsDoColaborador() {
-		Colaborador alan = new Colaborador("alan",160,150,3);
+		//Colaborador alan = new Colaborador("alan",160,150,3);
 		
 		alan.setHora_trabalhada(150);
 		alan.setSalario_hora(155);
 		alan.setDependentes(3);
 		alan.setNome("Alan Frigerio");
 		alan.setSalario_bruto(24150);
-		
-		//System.out.println(alan.getSalario_bruto());
-		
+				
 		Assert.assertEquals(24150, alan.getSalario_bruto(),0.0001);
 	}
 	
 	@Test
 	public void CriadorTeste() {
 		
-		folha = new CriadorDeFolha()
+		CalculoFolha folha2 = new CalculoFolha();
+		
+		folha2 = new CriadorDeFolha()
 				.funcionario("alan", 160, 150, 3)
 				.constroi();
 		
-		folha.calcularFolha();
+		folha2.calcularFolha();
 		
-		Assert.assertEquals(20286.00, folha.getColaboradores().get(0).getSalario_liquido(),0.0001);
+		Assert.assertEquals(20286.00, folha2.getColaboradores().get(0).getSalario_liquido(),0.0001);
 		
 	}
+
 
 }
