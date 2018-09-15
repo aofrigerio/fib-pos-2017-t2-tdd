@@ -47,5 +47,18 @@ public class CalculoFolhaTeste {
 		
 		Assert.assertEquals(24150, alan.getSalario_bruto(),0.0001);
 	}
+	
+	@Test
+	public void CriadorTeste() {
+		
+		folha = new CriadorDeFolha()
+				.funcionario("alan", 160, 150, 3)
+				.constroi();
+		
+		folha.calcularFolha();
+		
+		Assert.assertEquals(20286.00, folha.getColaboradores().get(0).getSalario_liquido(),0.0001);
+		
+	}
 
 }
